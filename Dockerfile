@@ -7,8 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt gunicorn
 
 COPY . .
 
-# Collect data on build so the DB is ready
-RUN python scripts/collect_data.py || true
+# DB is pre-populated (copied from witness-database)
 
 EXPOSE 8080
 
